@@ -15,9 +15,6 @@
 			imageSelector: 'this',
 			images: 'data-hoverthrough-images'
 		},
-		settings: {},
-		settingsTemp: {},
-		data: [],
 		instances: [],	
 		instanceCount: 0,
 
@@ -206,13 +203,13 @@
 		if ( !ht.methods[options] ) { 
 
 			// Merge settings
-			ht.settings = $.extend({}, ht.defaults, options);
+			var config = $.extend({}, ht.defaults, options);
 
 			// Add instance
-			ht.settings.instance = ht.instanceCount;
+			config.instance = ht.instanceCount;
 
 			// Save settings in data
-			this.data('hoverThrough', ht.settings);
+			this.data('hoverThrough', config);
 
 			// Return main method
 			var output = ht.init(this);
