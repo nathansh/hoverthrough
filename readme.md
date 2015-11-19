@@ -11,7 +11,7 @@ Alternate images are specified as an array in a data attribute named `data-hover
 For example:
 
 ```html
-data-hoverthrough-images='["http://placehold.it/135/175/3f3f3f", "http://www.placehold.it/135/175", "http://www.placehold.it/135/175/000000"'
+data-hoverthrough-images='["http://placehold.it/135/175/3f3f3f", "http://www.placehold.it/135/175", "http://www.placehold.it/135/175/000000"]'
 ```
 
 Note the use of single and double quotes. This is important.
