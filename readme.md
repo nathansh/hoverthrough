@@ -2,6 +2,8 @@
 
 A jQuery plugin that allows you to flip through a collection of images specified in a data attribute or passed in array by moving your mouse over an area. You can mouse over an element and change the `src` of a nest image, or mouse over an image and change its own source. The size of the image or hovering area is divided by the number of images provided, creating a trigger area. For example, three images will create three trigger areas a third the width of the hovering area. Mousing into a new trigger area changes the image.
 
+[Demo](http://codepen.io/nathansh/full/dYrLaK/)
+
 ## Basic use
 Include jQuery and target your image `.hoverThrough()`.
 
