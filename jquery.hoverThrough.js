@@ -1,9 +1,9 @@
 /*!
 * hoverThrough 1.0-beta1
-* 
+*
 * Written by Nathan Shubert-Harbison for Carter Hales Design Lab (carterhales.com)
 * Released under the WTFPL license - http://sam.zoy.org/wtfpl/
-* 
+*
 */
 
 (function($) {
@@ -15,7 +15,7 @@
 			imageSelector: 'this',
 			images: 'data-hoverthrough-images'
 		},
-		instances: [],	
+		instances: [],
 		instanceCount: 0,
 
 		init: function(that) {
@@ -30,7 +30,7 @@
 			ht.createInstance(instance, config);
 
 			// Loop through each item
-			return $(that).each(function(index) {				
+			return $(that).each(function(index) {
 
 				// Create a data object for each
 				ht.instances[instance].data[index] = {
@@ -81,9 +81,9 @@
 				// Hopefully we have an array of images
 				if ( $.isArray(dataImages) ) {
 					images = dataImages;
-				} 
+				}
 
-			} // else 
+			} // else
 
 			return images;
 
@@ -143,7 +143,7 @@
 			}
 
 		}, // swapImage
-		
+
 		imageToShow: function(instance, index, that, event) {
 
 			// Get position
@@ -182,7 +182,7 @@
 				$(that).off('mousemove.ht');
 
 			}, // kill
-			
+
 			refresh: function(that) {
 
 				// Get data config
@@ -200,7 +200,9 @@
 	$.fn.hoverThrough = function(options) {
 
 		// Check if we're instantiating plugin with options or calling a method. Normal stuff first.
-		if ( !ht.methods[options] ) { 
+		if ( !ht.methods[options] ) {
+
+			var output = false;
 
 			// Merge settings
 			var config = $.extend({}, ht.defaults, options);
@@ -212,9 +214,13 @@
 			this.data('hoverThrough', config);
 
 			// Return main method
-			var output = ht.init(this);
-		
-			ht.instanceCount++;
+			if ( $(this).length ) {
+
+				output = ht.init(this);
+
+				ht.instanceCount++;
+
+			}
 
 			return output;
 
